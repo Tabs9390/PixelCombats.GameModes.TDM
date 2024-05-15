@@ -4,12 +4,12 @@ import * as teams from './default_teams.js';
 
 // настройки
 const WaitingPlayersTime = 5;
-const BuildBaseTime = 5;
-const KnivesModeTime = 5;
-const GameModeTime = 5;
+const BuildBaseTime = 15;
+const KnivesModeTime = 0;
+const GameModeTime = 300;
 const EndOfMatchTime = 5;
-const VoteTime = 5;
-const maxDeaths = 0;
+const VoteTime = 10;
+const maxDeaths = ;
 
 // имена используемых объектов
 const WaitingStateValue = "Waiting";
