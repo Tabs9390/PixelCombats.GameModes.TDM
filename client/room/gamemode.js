@@ -9,7 +9,7 @@ const KnivesModeTime = 0;
 const GameModeTime = 300;
 const EndOfMatchTime = 5;
 const VoteTime = 10;
-const maxDeaths = ;
+const maxDeaths = Players.MaxCount * 5;
 
 // имена используемых объектов
 const WaitingStateValue = "Waiting";
