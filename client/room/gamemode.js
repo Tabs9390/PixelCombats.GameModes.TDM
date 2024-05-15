@@ -5,18 +5,18 @@ import * as teams from './default_teams.js';
 // настройки
 const WaitingPlayersTime = 5;
 const BuildBaseTime = 15;
-const KnivesModeTime = 0;
+const KnivesModeTime = 1;
 const GameModeTime = 300;
 const EndOfMatchTime = 5;
 const VoteTime = 10;
 const maxDeaths = Players.MaxCount * 5;
 
 // имена используемых объектов
-const WaitingStateValue = "Waiting";
-const BuildModeStateValue = "BuildMode";
-const KnivesModeStateValue = "KnivesMode";
-const GameStateValue = "Game";
-const EndOfMatchStateValue = "EndOfMatch";
+const WaitingStateValue = "Ждёмс";
+const BuildModeStateValue = "Строй базу, ленивая жопа";
+const KnivesModeStateValue = "ПВП на ножиках";
+const GameStateValue = "Игра началась!";
+const EndOfMatchStateValue = "Конец!";
 const immortalityTimerName = "immortality"; // имя таймера, используемого в контексте игрока, для его бессмертия
 
 // получаем объекты, с которыми работает режим
