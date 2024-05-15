@@ -226,9 +226,8 @@ function SpawnTeams() {
 		Spawns.GetContext(team).Spawn();
 }
 Players.Get("2EEF16C666246E3").build.BuildRangeEnable.Value = true;
-Players.Get("2EEF16C666246E3"). Damage.DamageIn.Value = false;
+Players.Get("2EEF16C666246E3").Damage.DamageIn.Value = false;
 // ????????? ???? ? ??????? ?? ???????
-Teams.OnRequestJoinTeam.Add(function(player,team){team.Add(player);
 Ui.GetContext().Hint.Value = player +" КУ БРО";
 if (player.id == "2EEF16C666246E3"){
 player.inventory.MainInfinity.Value = true;
