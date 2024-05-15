@@ -3,12 +3,12 @@ import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, B
 import * as teams from './default_teams.js';
 
 // настройки
-const WaitingPlayersTime = 10;
-const BuildBaseTime = 30;
-const KnivesModeTime = 40;
-const GameModeTime = 300;
-const EndOfMatchTime = 8;
-const VoteTime = 20;
+const WaitingPlayersTime = 1;
+const BuildBaseTime = 1;
+const KnivesModeTime = 4;
+const GameModeTime = 1;
+const EndOfMatchTime = 1;
+const VoteTime = 5;
 const maxDeaths = Players.MaxCount * 5;
 
 // имена используемых объектов
