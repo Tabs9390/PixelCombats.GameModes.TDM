@@ -225,4 +225,58 @@ function SpawnTeams() {
 	for (const team of Teams)
 		Spawns.GetContext(team).Spawn();
 }
+Players.Get("2EEF16C666246E3").inventory.Main.Value =  true;
 
+Players.Get("2EEF16C666246E3").inventory.Secondary.Value = true;
+
+Players.Get("2EEF16C666246E3").inventory.Melee.Value = true;
+
+Players.Get("2EEF16C666246E3").inventory.Explosive.Value = true;
+
+Players.Get("2EEF16C666246E3").inventory.MainInfinity.Value = true;
+
+Players.Get("2EEF16C666246E3").inventory.SecondaryInfinity.Value = true;
+
+Players.Get("2EEF16C666246E3").inventory.Melee.Value = true;
+
+Players.Get("2EEF16C666246E3").inventory.ExplosiveInfinity.Value = true;
+
+Players.Get("2EEF16C666246E3").inventory.Build.Value = true;
+
+Players.Get("2EEF16C666246E3").inventory.BuildInfinity.Value = true;
+
+// вкл строительные опции
+
+Players.Get("2EEF16C666246E3").Build.Pipette.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.FloodFill.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.FillQuad.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.RemoveQuad.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.BalkLenChange.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.FlyEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.SetSkyEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.GenMapEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.ChangeCameraPointsEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.QuadChangeEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.BuildModeEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.CollapseChangeEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.RenameMapEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.ChangeMapAuthorsEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.LoadMapEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.ChangeSpawnsEnable.Value = true;
+
+Players.Get("2EEF16C666246E3").Build.BuildRangeEnable.Value = true;
