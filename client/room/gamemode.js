@@ -145,7 +145,6 @@ function SetBuildMode() {
 	Damage.GetContext().DamageOut.Value = false;
 
 	mainTimer.Restart(BuildBaseTime);
-	Spawns.GetContext().enable = true;
 }
 function SetKnivesMode() {
 	stateProp.Value = KnivesModeStateValue;
@@ -160,7 +159,6 @@ function SetKnivesMode() {
 	Damage.GetContext().DamageOut.Value = true;
 
 	mainTimer.Restart(KnivesModeTime);
-	Spawns.GetContext().enable = true;
 }
 function SetGameMode() {
 	// разрешаем нанесение урона
@@ -186,7 +184,6 @@ function SetGameMode() {
 	}
 
 	mainTimer.Restart(GameModeTime);
-	Spawns.GetContext().Despawn();
 }
 function SetEndOfMatchMode() {
 	stateProp.Value = EndOfMatchStateValue;
@@ -194,7 +191,6 @@ function SetEndOfMatchMode() {
 
 	var spawns = Spawns.GetContext();
 	spawns.enable = false;
-	spawns.Despawn();
 	Game.GameOver(LeaderBoard.GetTeams());
 	NewGame.RestartGame();
 }
