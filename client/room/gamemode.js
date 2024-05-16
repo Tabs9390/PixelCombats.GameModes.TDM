@@ -163,7 +163,7 @@ function SetGameMode() {
 	// разрешаем нанесение урона
 	Damage.GetContext().DamageOut.Value = true;
 	stateProp.Value = GameStateValue;
-	Ui.GetContext().Hint.Value = "Hint/AttackEnemies";
+	Ui.GetContext().Hint.Value = "Атачка";
 
 	var inventory = Inventory.GetContext();
 	if (GameMode.Parameters.GetBool("OnlyKnives")) {
@@ -182,6 +182,7 @@ function SetGameMode() {
 
 	mainTimer.Restart(GameModeTime);
 	Spawns.GetContext().Despawn();
+	SetEndOfMatchMode();
 }
 
 
