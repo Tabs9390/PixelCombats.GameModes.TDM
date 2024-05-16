@@ -121,7 +121,6 @@ mainTimer.OnTimer.Add(function () {
 			SetEndOfMatchMode();
 			break;
 		case EndOfMatchStateValue:
-			start_vote();
 			break;
 	}
 });
