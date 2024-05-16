@@ -86,7 +86,7 @@ Properties.OnPlayerProperty.Add(function (context, value) {
 // ���� � ������� ���������� ������� ���������� �� ��������� ����
 Properties.OnTeamProperty.Add(function (context, value) {
 	if (value.Name !== "Deaths") return;
-	if (value.Value <= 0) SetEndOfMatchMode();
+	if (value.Value <= 0);
 });
 
 // ������� �������
@@ -110,7 +110,7 @@ mainTimer.OnTimer.Add(function () {
 	switch (stateProp.Value) {
 		case GameStateValue:
 			SetEndOfMatchMode();
-			break;
+	        break;
 	}
 });
 
