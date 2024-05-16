@@ -1,6 +1,6 @@
 {
-  "Name": "TDM",
-  "Description": "Team Death Match. Битва двух команд",
+  "Name": "Фарм сундуков и опыта",
+  "Description": "Специальный режим для форма, кому очень нужно!",
   "StartClientVersion": 532,
   "MapFilter": {
     "IsBlank": false,
