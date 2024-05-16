@@ -116,8 +116,6 @@ mainTimer.OnTimer.Add(function () {
 			break;
 	}
 });
-// изначально задаем состояние ожидания других игроков
-SetWaitingMode();
 
 // состояния игры
 function SetWaitingMode() {
