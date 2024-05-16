@@ -3,7 +3,7 @@ import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, B
 import * as teams from './default_teams.js';
 
 // настройки
-const WaitingPlayersTime = 1;
+const WaitingPlayersTime = 4;
 const BuildBaseTime = 1;
 const KnivesModeTime = 1;
 const GameModeTime = 1;
