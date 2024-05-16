@@ -110,6 +110,11 @@ mainTimer.OnTimer.Add(function () {
 	switch (stateProp.Value) {
 		case WaitingStateValue:
 			SetBuildMode();
+                        if(Players.Count >= 2 ) {
+			mainTimer.Restart(WaitingPlayersTime)
+	
+	                }
+
 			break;
 		case BuildModeStateValue:
 			SetKnivesMode();
@@ -136,7 +141,6 @@ function SetWaitingMode() {
 	Spawns.GetContext().enable = false;
         if(Players.Count >= 2 ) {
 	Ui.GetContext().Hint.Value = "УРА, ЕСТЬ 2!";
-	mainTimer.Restart(WaitingPlayersTime);
 	}
 
 }
