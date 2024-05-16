@@ -33,14 +33,13 @@ Properties.GetContext().GameModeName.Value = "GameModes/Team Dead Match";
 TeamsBalancer.IsAutoBalance = true;
 Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 // создаем команды
-Teams.Add("Red", "default_teams/Red", { r: 1 });
-var redTeam = Teams.Get("Red");
+var redTeam = teams.create_team_red();
 redTeam.Spawns.SpawnPointsGroups.Add(2);
 redTeam.Build.BlocksSet.Value = BuildBlocksSet.Red;
 
 // задаем макс смертей команд
 var maxDeaths = Players.MaxCount * 5;
-Teams.Get("Red").Properties.Get("Deaths").Value = maxDeaths;
+redTeam.Properties.Get("Deaths").Value = maxDeaths;
 // задаем что выводить в лидербордах
 LeaderBoard.PlayerLeaderBoardValues = [
 	{
