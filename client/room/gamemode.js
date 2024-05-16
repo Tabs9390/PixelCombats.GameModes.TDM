@@ -65,7 +65,6 @@ Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Deaths" };
 // ��������� ���� � ������� �� �������
 Teams.OnRequestJoinTeam.Add(function (player, team) { team.Add(player); });
 // ����� �� ����� � �������
-Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
 
 // бессмертие после респавна
 Spawns.GetContext().OnSpawn.Add(function (player) {
@@ -169,6 +168,8 @@ function SetGameMode() {
 	Damage.GetContext().DamageOut.Value = true;
 	stateProp.Value = GameStateValue;
 	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
+        player.Properties.Scores.Value = 999;
+
 
 	var inventory = Inventory.GetContext();
 	if (GameMode.Parameters.GetBool("OnlyKnives")) {
