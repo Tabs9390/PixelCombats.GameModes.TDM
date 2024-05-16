@@ -37,14 +37,11 @@ Properties.GetContext().GameModeName.Value = "GameModes/Team Dead Match";
 TeamsBalancer.IsAutoBalance = true;
 Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 // создаем стандартные команды
-const blueTeam = teams.create_team_blue();
 const redTeam = teams.create_team_red();
-blueTeam.Build.BlocksSet.Value = BuildBlocksSet.Blue;
 redTeam.Build.BlocksSet.Value = BuildBlocksSet.Red;
 
 // задаем запас смертей в каждой команде
 redTeam.Properties.Get("Deaths").Value = maxDeaths;
-blueTeam.Properties.Get("Deaths").Value = maxDeaths;
 // настраиваем параметры, которые нужно выводить в лидерборде
 LeaderBoard.PlayerLeaderBoardValues = [
 	new DisplayValueHeader("Kills", "Statistics/Kills", "Statistics/KillsShort"),
@@ -63,7 +60,6 @@ LeaderBoard.PlayersWeightGetter.Set(function (player) {
 });
 
 // ������ ��� �������� ������
-Ui.GetContext().TeamProp1.Value = { Team: "Blue", Prop: "Deaths" };
 Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Deaths" };
 
 // ��������� ���� � ������� �� �������
@@ -117,9 +113,6 @@ mainTimer.OnTimer.Add(function () {
 			break;
 		case BuildModeStateValue:
 			SetKnivesMode();
-			break;
-		case KnivesModeStateValue:
-			SetGameMode();
 			break;
 		case GameStateValue:
 			SetEndOfMatchMode();
