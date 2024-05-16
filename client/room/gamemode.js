@@ -128,14 +128,13 @@ SetWaitingMode();
 // состояния игры
 function SetWaitingMode() {
 	stateProp.Value = WaitingStateValue;
-	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
+	Ui.GetContext().Hint.Value = "Hint/WaitingPlayers";
 	Spawns.GetContext().enable = false;
-        mainTimer.Restart(WaitingPlayersTime)
-
+	mainTimer.Restart(WaitingPlayersTime);
 }
 function SetBuildMode() {
 	stateProp.Value = BuildModeStateValue;
-	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
+	Ui.GetContext().Hint.Value = "Hint/BuildBase";
 	var inventory = Inventory.GetContext();
 	inventory.Main.Value = false;
 	inventory.Secondary.Value = false;
@@ -146,10 +145,12 @@ function SetBuildMode() {
 	Damage.GetContext().DamageOut.Value = false;
 
 	mainTimer.Restart(BuildBaseTime);
+	Spawns.GetContext().enable = true;
+	SpawnTeams();
 }
 function SetKnivesMode() {
 	stateProp.Value = KnivesModeStateValue;
-	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
+	Ui.GetContext().Hint.Value = "Hint/KnivesMode";
 	var inventory = Inventory.GetContext();
 	inventory.Main.Value = false;
 	inventory.Secondary.Value = false;
@@ -160,14 +161,14 @@ function SetKnivesMode() {
 	Damage.GetContext().DamageOut.Value = true;
 
 	mainTimer.Restart(KnivesModeTime);
+	Spawns.GetContext().enable = true;
+	SpawnTeams();
 }
 function SetGameMode() {
 	// разрешаем нанесение урона
 	Damage.GetContext().DamageOut.Value = true;
 	stateProp.Value = GameStateValue;
-	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
-        player.Properties.Scores.Value = 999;
-
+	Ui.GetContext().Hint.Value = "Hint/AttackEnemies";
 
 	var inventory = Inventory.GetContext();
 	if (GameMode.Parameters.GetBool("OnlyKnives")) {
@@ -185,15 +186,18 @@ function SetGameMode() {
 	}
 
 	mainTimer.Restart(GameModeTime);
+	Spawns.GetContext().Despawn();
+	SpawnTeams();
 }
 function SetEndOfMatchMode() {
 	stateProp.Value = EndOfMatchStateValue;
-	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
+	Ui.GetContext().Hint.Value = "Hint/EndOfMatch";
 
 	var spawns = Spawns.GetContext();
 	spawns.enable = false;
+	spawns.Despawn();
 	Game.GameOver(LeaderBoard.GetTeams());
-	NewGame.RestartGame();
+	mainTimer.Restart(EndOfMatchTime);
 }
 
 function OnVoteResult(v) {
@@ -207,4 +211,4 @@ function start_vote() {
 		Variants: [{ MapId: 0 }],
 		Timer: VoteTime
 	}, MapRotation ? 3 : 0);
-}
+		}
