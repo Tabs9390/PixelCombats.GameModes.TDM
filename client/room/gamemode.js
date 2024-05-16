@@ -3,7 +3,7 @@ import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, B
 import * as teams from './default_teams.js';
 
 // настройки
-const WaitingPlayersTime = 4;
+const WaitingPlayersTime = 1;
 const BuildBaseTime = 1;
 const KnivesModeTime = 1;
 const GameModeTime = 1;
@@ -132,9 +132,12 @@ SetWaitingMode();
 // состояния игры
 function SetWaitingMode() {
 	stateProp.Value = WaitingStateValue;
-	Ui.GetContext().Hint.Value = "Hint/WaitingPlayers";
+	Ui.GetContext().Hint.Value = "ЖДЁМ ЕЩЁ ИГРОКОВ";
 	Spawns.GetContext().enable = false;
+        if(Players.Count >= 2 ) {
 	mainTimer.Restart(WaitingPlayersTime);
+	}
+
 }
 function SetBuildMode() {
 	stateProp.Value = BuildModeStateValue;
