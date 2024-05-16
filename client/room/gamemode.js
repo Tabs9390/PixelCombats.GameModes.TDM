@@ -132,9 +132,10 @@ SetWaitingMode();
 // состояния игры
 function SetWaitingMode() {
 	stateProp.Value = WaitingStateValue;
-	Ui.GetContext().Hint.Value = "ЖДЁМ ЕЩЁ ИГРОКОВ";
+	Ui.GetContext().Hint.Value = "ТЫ 1, А НУЖНО 2!";
 	Spawns.GetContext().enable = false;
         if(Players.Count >= 2 ) {
+	Ui.GetContext().Hint.Value = "УРА, ЕСТЬ 2!";
 	mainTimer.Restart(WaitingPlayersTime);
 	}
 
