@@ -70,7 +70,7 @@ Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
 // бессмертие после респавна
 Spawns.GetContext().OnSpawn.Add(function (player) {
 	player.Properties.Immortality.Value = true;
-	player.Timers.Get(immortalityTimerName).Restart(3);
+	player.Timers.Get(immortalityTimerName).Restart(1);
 });
 Timers.OnPlayerTimer.Add(function (timer) {
 	if (timer.Id != immortalityTimerName) return;
@@ -111,6 +111,12 @@ mainTimer.OnTimer.Add(function () {
 		case WaitingStateValue:
 			SetBuildMode();
 			break;
+		case BuildModeStateValue:
+			SetKnivesMode();
+			break;
+		case KnivesModeStateValue:
+			SetGameMode();
+			break;
 		case GameStateValue:
 			SetEndOfMatchMode();
 			break;
@@ -119,7 +125,6 @@ mainTimer.OnTimer.Add(function () {
 			break;
 	}
 });
-
 // изначально задаем состояние ожидания других игроков
 SetWaitingMode();
 
