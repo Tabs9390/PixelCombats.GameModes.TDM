@@ -111,17 +111,8 @@ mainTimer.OnTimer.Add(function () {
 		case WaitingStateValue:
 			SetBuildMode();
 			break;
-		case BuildModeStateValue:
-			SetKnivesMode();
-			break;
-		case KnivesModeStateValue:
-			SetGameMode();
-			break;
 		case GameStateValue:
 			SetEndOfMatchMode();
-			break;
-		case EndOfMatchStateValue:
-			start_vote();
 			break;
 	}
 });
