@@ -6,7 +6,7 @@ import * as teams from './default_teams.js';
 const WaitingPlayersTime = 1;
 const BuildBaseTime = 1;
 const KnivesModeTime = 1;
-const GameModeTime = 2;
+const GameModeTime = 1;
 const EndOfMatchTime = 1;
 const VoteTime = 1;
 const maxDeaths = Players.MaxCount * 5;
@@ -65,7 +65,7 @@ Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Deaths" };
 // ��������� ���� � ������� �� �������
 Teams.OnRequestJoinTeam.Add(function (player, team) { team.Add(player); });
 // ����� �� ����� � �������
-Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
+Teams.OnPlayerChangeTeam.Add(function (player));
 // бессмертие после респавна
 Spawns.GetContext().OnSpawn.Add(function (player) {
 	player.Properties.Immortality.Value = true;
