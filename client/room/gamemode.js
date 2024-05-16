@@ -66,7 +66,7 @@ Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Deaths" };
 Teams.OnRequestJoinTeam.Add(function (player, team) { team.Add(player); });
 // ����� �� ����� � �������
 
-Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn(); });
+Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
 Spawns.GetContext().OnSpawn.Add(function (player) {
 	player.Properties.Immortality.Value = true;
 	player.Timers.Get(immortalityTimerName).Restart(1);
