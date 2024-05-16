@@ -112,6 +112,7 @@ mainTimer.OnTimer.Add(function () {
 			SetBuildMode();
 			break;
 		case GameStateValue:
+			SetGameMode();
 			SetEndOfMatchMode();
 			break;
 	}
@@ -159,7 +160,6 @@ function SetKnivesMode() {
 function SetGameMode() {
 	// разрешаем нанесение урона
 	Damage.GetContext().DamageOut.Value = true;
-	SetEndOfMatchMode();
 	stateProp.Value = GameStateValue;
 	Ui.GetContext().Hint.Value = "Hint/AttackEnemies";
 
