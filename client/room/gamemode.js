@@ -110,11 +110,6 @@ mainTimer.OnTimer.Add(function () {
 	switch (stateProp.Value) {
 		case WaitingStateValue:
 			SetBuildMode();
-                        if(Players.Count >= 2 ) {
-			mainTimer.Restart(WaitingPlayersTime)
-	
-	                }
-
 			break;
 		case BuildModeStateValue:
 			SetKnivesMode();
@@ -137,16 +132,14 @@ SetWaitingMode();
 // состояния игры
 function SetWaitingMode() {
 	stateProp.Value = WaitingStateValue;
-	Ui.GetContext().Hint.Value = "ТЫ 1, А НУЖНО 2!";
+	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
 	Spawns.GetContext().enable = false;
-        if(Players.Count >= 2 ) {
-	Ui.GetContext().Hint.Value = "УРА, ЕСТЬ 2!";
-	}
+        mainTimer.Restart(WaitingPlayersTime)
 
 }
 function SetBuildMode() {
 	stateProp.Value = BuildModeStateValue;
-	Ui.GetContext().Hint.Value = "Hint/BuildBase";
+	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
 	var inventory = Inventory.GetContext();
 	inventory.Main.Value = false;
 	inventory.Secondary.Value = false;
@@ -162,7 +155,7 @@ function SetBuildMode() {
 }
 function SetKnivesMode() {
 	stateProp.Value = KnivesModeStateValue;
-	Ui.GetContext().Hint.Value = "Hint/KnivesMode";
+	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
 	var inventory = Inventory.GetContext();
 	inventory.Main.Value = false;
 	inventory.Secondary.Value = false;
@@ -180,7 +173,7 @@ function SetGameMode() {
 	// разрешаем нанесение урона
 	Damage.GetContext().DamageOut.Value = true;
 	stateProp.Value = GameStateValue;
-	Ui.GetContext().Hint.Value = "Hint/AttackEnemies";
+	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
 
 	var inventory = Inventory.GetContext();
 	if (GameMode.Parameters.GetBool("OnlyKnives")) {
@@ -203,7 +196,7 @@ function SetGameMode() {
 }
 function SetEndOfMatchMode() {
 	stateProp.Value = EndOfMatchStateValue;
-	Ui.GetContext().Hint.Value = "Hint/EndOfMatch";
+	Ui.GetContext().Hint.Value = "TG: https://pixelcombatsfun";
 
 	var spawns = Spawns.GetContext();
 	spawns.enable = false;
