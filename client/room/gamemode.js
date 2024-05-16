@@ -65,7 +65,7 @@ Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Deaths" };
 // ��������� ���� � ������� �� �������
 Teams.OnRequestJoinTeam.Add(function (player, team) { team.Add(player); });
 // ����� �� ����� � �������
-
+Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
 // бессмертие после респавна
 Spawns.GetContext().OnSpawn.Add(function (player) {
 	player.Properties.Immortality.Value = true;
