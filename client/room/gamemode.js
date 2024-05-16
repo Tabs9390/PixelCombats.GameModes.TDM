@@ -13,7 +13,7 @@ const maxDeaths = Players.MaxCount * 5;
 
 // имена используемых объектов
 const WaitingStateValue = "Waiting";
-const BuildModeStateValue = "BuildMode";
+const BuildModeStateValue = "ТюТюТб";
 const KnivesModeStateValue = "KnivesMode";
 const GameStateValue = "Game";
 const EndOfMatchStateValue = "EndOfMatch";
