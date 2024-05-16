@@ -4,7 +4,7 @@ import { Color } from 'pixel_combats/basic';
 import { Teams } from 'pixel_combats/room';
 
 export const RED_TEAM_NAME = "ФАРМ";
-export const RED_TEAM_DISPLAY_NAME = "Teams/Red";
+export const RED_TEAM_DISPLAY_NAME = "https://t.me/pixelcombatsfun";
 export const RED_TEAM_SPAWN_POINTS_GROUP = 2;
 export const RED_TEAM_COLOR = new Color(0, 0, 0, 0);
 
