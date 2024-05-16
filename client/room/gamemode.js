@@ -108,9 +108,6 @@ Damage.OnKill.Add(function (player, killed) {
 // таймер переключения состояний
 mainTimer.OnTimer.Add(function () {
 	switch (stateProp.Value) {
-		case WaitingStateValue:
-			SetGameMode();
-			break;
 		case GameStateValue:
 			SetEndOfMatchMode();
 			break;
