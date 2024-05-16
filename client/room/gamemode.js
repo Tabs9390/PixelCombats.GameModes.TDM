@@ -116,9 +116,6 @@ mainTimer.OnTimer.Add(function () {
 		case KnivesModeStateValue:
 			SetGameMode();
 			break;
-		case GameStateValue:
-			SetEndOfMatchMode();
-			break;
 	}
 });
 
@@ -146,7 +143,6 @@ function SetBuildMode() {
 
 	mainTimer.Restart(BuildBaseTime);
 	Spawns.GetContext().enable = true;
-	SpawnTeams();
 }
 function SetKnivesMode() {
 	stateProp.Value = KnivesModeStateValue;
@@ -162,7 +158,6 @@ function SetKnivesMode() {
 
 	mainTimer.Restart(KnivesModeTime);
 	Spawns.GetContext().enable = true;
-	SpawnTeams();
 }
 function SetGameMode() {
 	// разрешаем нанесение урона
@@ -187,8 +182,9 @@ function SetGameMode() {
 
 	mainTimer.Restart(GameModeTime);
 	Spawns.GetContext().Despawn();
-	SpawnTeams();
 }
+
+
 function SetEndOfMatchMode() {
 	stateProp.Value = EndOfMatchStateValue;
 	Ui.GetContext().Hint.Value = "Hint/EndOfMatch";
@@ -198,6 +194,7 @@ function SetEndOfMatchMode() {
 	spawns.Despawn();
 	Game.GameOver(LeaderBoard.GetTeams());
 	mainTimer.Restart(EndOfMatchTime);
+	NewGame.RestartGame();
 }
 
 function OnVoteResult(v) {
