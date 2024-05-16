@@ -37,14 +37,11 @@ Properties.GetContext().GameModeName.Value = "GameModes/Team Dead Match";
 TeamsBalancer.IsAutoBalance = true;
 Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 // создаем стандартные команды
-const blueTeam = teams.create_team_blue();
 const redTeam = teams.create_team_red();
-blueTeam.Build.BlocksSet.Value = BuildBlocksSet.Blue;
 redTeam.Build.BlocksSet.Value = BuildBlocksSet.Red;
 
 // задаем запас смертей в каждой команде
 redTeam.Properties.Get("Deaths").Value = maxDeaths;
-blueTeam.Properties.Get("Deaths").Value = maxDeaths;
 // настраиваем параметры, которые нужно выводить в лидерборде
 LeaderBoard.PlayerLeaderBoardValues = [
 	new DisplayValueHeader("Kills", "Statistics/Kills", "Statistics/KillsShort"),
@@ -63,7 +60,6 @@ LeaderBoard.PlayersWeightGetter.Set(function (player) {
 });
 
 // ������ ��� �������� ������
-Ui.GetContext().TeamProp1.Value = { Team: "Blue", Prop: "Deaths" };
 Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Deaths" };
 
 // ��������� ���� � ������� �� �������
@@ -74,7 +70,7 @@ Teams.OnPlayerChangeTeam.Add(function (player) { player.Spawns.Spawn() });
 // бессмертие после респавна
 Spawns.GetContext().OnSpawn.Add(function (player) {
 	player.Properties.Immortality.Value = true;
-	player.Timers.Get(immortalityTimerName).Restart(3);
+	player.Timers.Get(immortalityTimerName).Restart(1);
 });
 Timers.OnPlayerTimer.Add(function (timer) {
 	if (timer.Id != immortalityTimerName) return;
