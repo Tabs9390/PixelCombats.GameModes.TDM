@@ -199,7 +199,7 @@ function SetEndOfMatchMode() {
 	spawns.enable = false;
 	spawns.Despawn();
 	Game.GameOver(LeaderBoard.GetTeams());
-	NewGame.RestartGame(v.Result);
+	NewGame.RestartGame();
 }
 
 function OnVoteResult(v) {
