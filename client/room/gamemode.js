@@ -109,10 +109,9 @@ Damage.OnKill.Add(function (player, killed) {
 mainTimer.OnTimer.Add(function () {
 	switch (stateProp.Value) {
 		case WaitingStateValue:
-			SetBuildMode();
+			SetGameMode();
 			break;
 		case GameStateValue:
-			SetGameMode();
 			SetEndOfMatchMode();
 			break;
 	}
