@@ -120,8 +120,6 @@ mainTimer.OnTimer.Add(function () {
 		case GameStateValue:
 			SetEndOfMatchMode();
 			break;
-		case EndOfMatchStateValue:
-			break;
 	}
 });
 
@@ -201,7 +199,7 @@ function SetEndOfMatchMode() {
 	spawns.enable = false;
 	spawns.Despawn();
 	Game.GameOver(LeaderBoard.GetTeams());
-	mainTimer.Restart(EndOfMatchTime);
+	NewGame.RestartGame(v.Result);
 }
 
 function OnVoteResult(v) {
