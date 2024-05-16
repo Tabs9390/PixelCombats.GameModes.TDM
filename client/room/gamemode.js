@@ -4,11 +4,11 @@ import * as teams from './default_teams.js';
 
 // настройки
 const WaitingPlayersTime = 10;
-const BuildBaseTime = 30;
-const KnivesModeTime = 40;
-const GameModeTime = 300;
-const EndOfMatchTime = 8;
-const VoteTime = 20;
+const BuildBaseTime = 1;
+const KnivesModeTime = 1;
+const GameModeTime = 1;
+const EndOfMatchTime = 1;
+const VoteTime = 1;
 const maxDeaths = Players.MaxCount * 5;
 
 // имена используемых объектов
