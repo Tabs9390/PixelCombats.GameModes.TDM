@@ -111,9 +111,6 @@ mainTimer.OnTimer.Add(function () {
 		case WaitingStateValue:
 			SetBuildMode();
 			break;
-		case BuildModeStateValue:
-			SetKnivesMode();
-			break;
 		case GameStateValue:
 			SetEndOfMatchMode();
 			break;
