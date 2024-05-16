@@ -217,5 +217,4 @@ function start_vote() {
 
 function SpawnTeams() {
 	for (const team of Teams)
-		Spawns.GetContext(team).Spawn();
 		}
