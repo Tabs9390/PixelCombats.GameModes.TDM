@@ -195,7 +195,10 @@ function SetEndOfMatchMode() {
 	spawns.Despawn();
 	Game.GameOver(LeaderBoard.GetTeams());
 	mainTimer.Restart(EndOfMatchTime);
-	NewGame.RestartGame();
+	if(EndOfMatchTime === 0) {
+        NewGame.RestartGame();
+ 
+	}
 }
 
 function OnVoteResult(v) {
