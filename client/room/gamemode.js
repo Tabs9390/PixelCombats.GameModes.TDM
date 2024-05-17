@@ -116,6 +116,9 @@ mainTimer.OnTimer.Add(function () {
 		case KnivesModeStateValue:
 			SetGameMode();
 			break;
+		case EndOfMatchStateValue:
+			NewGame.RestartGame();
+			break;
 	}
 });
 
@@ -195,10 +198,6 @@ function SetEndOfMatchMode() {
 	spawns.Despawn();
 	Game.GameOver(LeaderBoard.GetTeams());
 	mainTimer.Restart(EndOfMatchTime);
-	if(EndOfMatchTime === 0) {
-        NewGame.RestartGame();
- 
-	}
 }
 
 function OnVoteResult(v) {
